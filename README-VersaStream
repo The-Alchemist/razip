@@ -1,0 +1,7 @@
+The VersaStream class is an extension to the idea of InputStreams and OutputStreams. I'll write more about VersaStream later. For now, please take a look at the source code inlcuded. You could start by reading ZeeProxy.java, then VersaStreamFactory.java, then VersaStream.java, for example.
+
+Enjoy,
+
+Elifarley C. Coelho
+elifarley@yahoo.com
+http://www.geocities.com/elifarley/

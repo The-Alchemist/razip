@@ -1,0 +1,14 @@
+RAZip 1.0 alpha 1
+
+Usage: java RAZip source-file dest-file
+
+- If source-file is a RAZip file, it will be decompressed and saved as dest-file;
+- If source-file is a GZIP file, it will be decompressed, compressed in RAZip format, and then saved as dest-file;
+- If none of the above applies, source file will be compressed in RAZip format and saved as dest-file
+
+
+Enjoy,
+
+Elifarley C. Coelho
+elifarley@yahoo.com
+http://www.geocities.com/elifarley/

@@ -1,0 +1,1 @@
+package elifarley.net;public interface ServerThreadEvent {	public void act(PeerThread pThread);}

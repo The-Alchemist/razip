@@ -1,0 +1,78 @@
+RAZip bitstream format PR 2
+
+The RAZip bitstream format was designed to provide a faster random access to compressed data than what is currently possible using the GZIP format. During the desing phase, some other features were added. Below is a list with the main features of RAZip:
+
+- provides fast random access to the uncompressed version of compressed data (Example: you can compress an ext2fs-formatted file and mount it as a read-only file system under GNU-Linux and still have a performance comparable to, or better than, an uncompressed file system);
+
+- is not covered by patents;
+
+- data can be compressed or decompressed in a single pass, without seeking backwards, without a priori knowledge of the number of bytes to be compressed or the number of bytes available on the output media, using only an a priori bounded amount of intermediate storage, so that it can be used in Unix filters and similar structures;
+
+- the number of bytes to be compressed and the number of bytes the compressed stream uses is limited only by available storage space;
+
+- the exact number of uncompressed bytes can be derived from the bitstream without decompressing any bytes;
+
+- many compression algorithms can be used (including no compression). ( If the algorithm cannot determine the end of compressed data from the data itself, the ability to decompress without seeking backwards is lost);
+
+- many encryption algorithms can be used (including no encryption);
+
+- many error correction codes can be used;
+
+- error checking (you can check the integrity of your file);
+
+- error recovery (the user can choose the maximum number of bytes each single bit error in the compressed stream will be able to affect);
+
+- Creation / modification dates span more than 584 million years with 1 millisecond precision (So you won't have a similar Y2K problem too soon);
+
+- the original file name can be stored (the size of the file name is unbounded);
+
+- file comments can be stored (the size of the comments is unbounded);
+
+- Macintosh files can be compressed with both data fork and resource fork;
+
+- Macintosh files can be compressed with its type/creator info;
+
+- Macintosh files can be compressed with all its metadata (Finder flags, icon position, etc...);
+
+- Unix files can be compressed with all its metadata;
+
+- Storing Unix metadata does not stop you from storing MacOS metadata at the same time (or AmigaOS, BeOS, ...) 
+
+- Additional metadata can be stored in a variety of formats (XML, for example). The size of the metadata is unbounded.
+
+Below is another example: 
+
+Using the "properties" field, you can store the following text:
+
+	author=Elifarley Callado Coelho
+	genre=rythm&blues
+	lyrics=Oh this is a song, just a song. Sing with me my song, oh yeah... 
+	volume=75%
+
+or
+
+	cartridge name=Zero Wing
+	game category=Alien invasion
+	game subcategory=green-skinned arrow-eared bomb-eating Mars invaders
+	tips=Hit the alien with a stove in his forehead to go to the secret level
+
+or
+
+	.
+	.
+	.
+	
+
+- text data can be represented in UTF-8;
+
+- the RAZip header is compressed along with the data to be compressed (but can be stored without compression too);
+
+- almost everything is optional, so you don't waste bytes with unnecessary information;
+
+If you have any suggestions / questions , please let me know.
+
+Enjoy,
+
+Elifarley C. Coelho
+elifarley@yahoo.com
+http://www.geocities.com/elifarley/
